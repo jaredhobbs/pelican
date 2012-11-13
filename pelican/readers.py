@@ -38,6 +38,10 @@ class Reader(object):
     def process_metadata(self, name, value):
         if name in _METADATA_PROCESSORS:
             return _METADATA_PROCESSORS[name](value, self.settings)
+        try:
+            value = eval(value)
+        except Exception:
+            pass
         return value
 
 
