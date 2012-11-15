@@ -319,7 +319,7 @@ def main():
                     time.sleep(1)  # sleep to avoid cpu load
                 except Exception, e:
                     logger.warning(
-                        "Caught exception \"{}\". Reloading.".format(e)
+                        "Caught exception \"%s\". Reloading." % e.__str__()
                     )
                     continue
         else:
