@@ -138,7 +138,7 @@ class SitemapGenerator(object):
         if self.format == 'xml':
             fd.write(XML_URL.format(self.siteurl, page.url, lastmod, chfreq, pri))
         else:
-            fd.write(self.siteurl + '/' + loc + '\n')
+            fd.write(self.siteurl + '/' + page.url + '\n')
 
 
     def generate_output(self, writer):
